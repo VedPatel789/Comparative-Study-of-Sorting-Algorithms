@@ -1,0 +1,26 @@
+def run_benchmark():
+    sizes = [100, 500, 1000, 2000]
+
+    algorithms = {
+        "Bubble": bubble_sort,
+        "Selection": selection_sort,
+        "Insertion": insertion_sort,
+        "Merge": merge_sort,
+        "Quick": quick_sort,
+        "Heap": heap_sort,
+        "Shell": shell_sort,
+        "Counting": counting_sort
+    }
+
+    results = defaultdict(list)
+
+    for size in sizes:
+        arr = [random.randint(1, 1000) for _ in range(size)]
+        print(f"\n📊 Size: {size}")
+
+        for name, func in algorithms.items():
+            t = measure_time(func, arr)
+            results[name].append(t)
+            print(f"{name}: {t:.6f} sec")
+
+    return sizes, results
