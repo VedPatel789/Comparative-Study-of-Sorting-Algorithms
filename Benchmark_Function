@@ -1,0 +1,11 @@
+def measure_time(func, arr, repeat=3):
+    times = []
+
+    for _ in range(repeat):
+        start = time.perf_counter()
+        func(arr.copy())
+        end = time.perf_counter()
+        times.append(end - start)
+
+    return sum(times) / len(times)
+
