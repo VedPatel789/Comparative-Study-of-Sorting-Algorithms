@@ -1,0 +1,13 @@
+def plot_results(sizes, results):
+    plt.figure(figsize=(10,6))
+
+    for algo, times in results.items():
+        plt.plot(sizes, times, marker='o', label=algo)
+
+    plt.title("Sorting Algorithm Performance Comparison")
+    plt.xlabel("Input Size")
+    plt.ylabel("Time (seconds)")
+    plt.legend()
+    plt.grid(True)
+
+    plt.show()
