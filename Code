@@ -3,10 +3,8 @@ import time
 import matplotlib.pyplot as plt
 from collections import defaultdict
 
-# -----------------------------
-# SORTING ALGORITHMS
-# -----------------------------
 
+# SORTING ALGORITHMS
 def bubble_sort(arr):
     a = arr.copy()
     n = len(a)
@@ -138,11 +136,7 @@ def counting_sort(arr):
 
     return result
 
-
-# -----------------------------
 # BENCHMARK FUNCTION
-# -----------------------------
-
 def measure_time(func, arr, repeat=3):
     times = []
 
@@ -154,11 +148,7 @@ def measure_time(func, arr, repeat=3):
 
     return sum(times) / len(times)
 
-
-# -----------------------------
 # TEST RUNNER
-# -----------------------------
-
 def run_benchmark():
     sizes = [100, 500, 1000, 2000]
 
@@ -186,11 +176,7 @@ def run_benchmark():
 
     return sizes, results
 
-
-# -----------------------------
 # VISUALIZATION
-# -----------------------------
-
 def plot_results(sizes, results):
     plt.figure(figsize=(10,6))
 
@@ -205,10 +191,6 @@ def plot_results(sizes, results):
 
     plt.show()
 
-
-# -----------------------------
 # MAIN EXECUTION
-# -----------------------------
-
 sizes, results = run_benchmark()
 plot_results(sizes, results)
